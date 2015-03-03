@@ -1,3 +1,4 @@
+I took the code from https://github.com/Yameveo/RMSPushNotificationsBundle.git
 # RMSPushNotificationsBundle ![](https://secure.travis-ci.org/richsage/RMSPushNotificationsBundle.png)
 
 A bundle to allow sending of push notifications to mobile devices.  Currently supports Android (C2DM, GCM), Blackberry and iOS devices.
