@@ -73,6 +73,7 @@ class AndroidNotification implements OSNotificationServiceInterface
 
             $buzz = new Browser();
             $buzz->getClient()->setVerifyPeer(false);
+            $buzz->getClient()->setTimeout(3600);
             $response = $buzz->post("https://android.apis.google.com/c2dm/send", $headers, http_build_query($data));
 
             return preg_match("/^id=/", $response->getContent()) > 0;
@@ -98,6 +99,7 @@ class AndroidNotification implements OSNotificationServiceInterface
 
         $buzz = new Browser();
         $buzz->getClient()->setVerifyPeer(false);
+        $buzz->getClient()->setTimeout(3600);
         $response = $buzz->post("https://www.google.com/accounts/ClientLogin", array(), http_build_query($data));
         if ($response->getStatusCode() !== 200) {
             return false;

@@ -60,6 +60,7 @@ class AndroidGCMNotification implements OSNotificationServiceInterface
         if (!$client) {
             $client = ($useMultiCurl ? new MultiCurl() : new Curl());
         }
+        $client->setTimeout(3600);
         $this->browser = new Browser($client);
         $this->browser->getClient()->setVerifyPeer(false);
     }
